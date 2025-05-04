@@ -20,55 +20,57 @@ a {
 }
 
 .back-video {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    width: 100%;
-    min-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
-    background-position: center;
     z-index: -3;
 }
 
 .back-video video {
-    position: inherit;
-    min-height: 100%;
-    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    /* Esto asegura que cubra el alto de la pantalla */
+    object-fit: cover;
 }
 
-.overlay {
-    display: flex;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
+.overlay { /* Capa rosa semitransparente */
+    position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    min-height: 100%;
     background: deeppink;
+    overflow: hidden;
     z-index: -2;
     opacity: 0.55;
+    object-fit: cover;
 }
 
 .back-img {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
     background-position: center;
     z-index: -1;
 }
 
 .back-img img {
-    position: inherit;
-    height: 100%;
-    min-height: 100%;
-    opacity: 55%;
-    overflow: hidden;
+    width: auto;
+    height: 100vh;
     object-fit: cover;
+    opacity: 0.55;
 }
 
 .contenido {
@@ -160,7 +162,7 @@ li.Q:hover .Servicios {
     flex-direction: column;
     justify-content: flex-start;
     gap: 5vw;
-/*     padding-top: 100px; */
+    padding-top: 100px;
 }
 
 #Pros h5 {
@@ -228,6 +230,10 @@ footer .Logo {
 
     .back-img {
         display: none;
+    }
+
+    .back-video video {
+        width: 100vw;
     }
 
     li.D {
