@@ -12,7 +12,7 @@ pipeline {
             steps {
                 // Clonamos el repositorio de GitHub usando el token de acceso
                 // IMPORTANTE: Se indica explícitamente la rama 'main' (GitHub ya no usa 'master' por defecto)
-                git branch: 'main', credentialsId: 'github-token', url: 'https://github.com/Mabarea/TFG_MiguelBarea.git'
+                git credentialsId: 'github-token', url: 'https://github.com/Mabarea/TFG_MiguelBarea.git', branch: 'main'
             }
         }
 
