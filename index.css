@@ -226,7 +226,7 @@ footer .Logo {
 }
 
 /* MEDIA QUERY */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 666px) {
 
     .back-img {
         display: none;
