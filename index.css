@@ -68,6 +68,7 @@ a {
     min-height: 100%;
     opacity: 55%;
     overflow: hidden;
+    object-fit: cover;
 }
 
 .contenido {
