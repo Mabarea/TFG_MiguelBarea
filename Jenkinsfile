@@ -1,15 +1,13 @@
 pipeline {
     agent any
     environment {
-        // Variables de entorno para los tokens
-        NETLIFY_TOKEN = credentials('netlify-token')  // Se obtiene el token de Netlify desde las credenciales de Jenkins
-        GITHUB_TOKEN = credentials('github-token')    // Se obtiene el token de GitHub desde las credenciales de Jenkins
+        NETLIFY_TOKEN = credentials('netlify-token')
+        GITHUB_TOKEN = credentials('github-token')
     }
     stages {
         stage('Checkout') {
             steps {
-                // Clonamos el repositorio de GitHub usando las credenciales
-                git credentialsId: 'github-token', url: 'https://github.com/Mabarea/TFG_MiguelBarea.git'
+                git branch: 'main', credentialsId: 'github-token', url: 'https://github.com/Mabarea/TFG_MiguelBarea.git'
             }
         }
         stage('Build') {
@@ -19,7 +17,6 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                // Desplegamos el código a Netlify usando su API
                 withCredentials([string(credentialsId: 'netlify-token', variable: 'NETLIFY_TOKEN')]) {
                     sh '''
                     curl -H "Authorization: Bearer ${NETLIFY_TOKEN}" \
