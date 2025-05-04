@@ -39,7 +39,7 @@ a {
     object-fit: cover;
 }
 
-.overlay {
+.overlay { /* Capa rosa semitransparente */
     position: fixed;
     top: 0;
     left: 0;
