@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         NETLIFY_TOKEN = credentials('netlify-token')        // Token para API de Netlify
-        GITHUB_CLONE_TOKEN = credentials('github-clone-token')  // Token para clonar repositorio
+        GITHUB_CLONE_TOKEN = credentials('github-token')  // Token para clonar repositorio
         GITHUB_WEBHOOK_TOKEN = credentials('github-webhook-token')  // Token para webhook (si lo usas en otro lugar)
     }
 
