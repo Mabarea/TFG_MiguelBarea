@@ -2,30 +2,27 @@ pipeline {
     agent any  // Ejecutar el pipeline en cualquier agente disponible
 
     environment {
-        // Variables de entorno que se obtienen desde las credenciales almacenadas en Jenkins
-        NETLIFY_TOKEN = credentials('netlify-token')  // Token de autenticación para la API de Netlify
-        GITHUB_TOKEN = credentials('github-token')    // Token de acceso para clonar el repositorio de GitHub
+        NETLIFY_TOKEN = credentials('netlify-token')        // Token para API de Netlify
+        GITHUB_CLONE_TOKEN = credentials('github-clone-token')  // Token para clonar repositorio
+        GITHUB_WEBHOOK_TOKEN = credentials('github-webhook-token')  // Token para webhook (si lo usas en otro lugar)
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Clonamos el repositorio de GitHub usando el token de acceso
-                // IMPORTANTE: Se indica explícitamente la rama 'main' (GitHub ya no usa 'master' por defecto)
-                git credentialsId: 'github-token', url: 'https://github.com/Mabarea/TFG_MiguelBarea.git', branch: 'main'
+                // Clonamos el repositorio usando el token de clonación
+                git credentialsId: 'github-clone-token', url: 'https://github.com/Mabarea/TFG_MiguelBarea.git', branch: 'main'
             }
         }
 
         stage('Build') {
             steps {
-                // Esta etapa no compila nada porque se trata de una web estática en HTML
                 echo "No hay build porque es HTML estático"
             }
         }
 
         stage('Deploy') {
             steps {
-                // Usamos el token de Netlify para hacer una petición POST a su API y subir el archivo index.html
                 withCredentials([string(credentialsId: 'netlify-token', variable: 'NETLIFY_TOKEN')]) {
                     sh '''
                     curl -H "Authorization: Bearer ${NETLIFY_TOKEN}" \
