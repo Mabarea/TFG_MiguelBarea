@@ -19,7 +19,7 @@ a {
     color: inherit;
 }
 
-.back-video {
+/* .back-video {
     position: fixed;
     top: 0;
     left: 0;
@@ -27,7 +27,7 @@ a {
     height: 100vh;
     overflow: hidden;
     z-index: -3;
-}
+} */
 
 .back-video video {
     position: absolute;
@@ -45,7 +45,7 @@ a {
     left: 0;
     width: 100%;
     min-height: 100%;
-/*     background: deeppink; */
+    background: deeppink;
     overflow: hidden;
     z-index: -2;
     opacity: 0.55;
