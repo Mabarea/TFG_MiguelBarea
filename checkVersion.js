@@ -1,28 +1,25 @@
-const versionUrl = '/version.txt';
 let currentVersion = null;
 
-async function checkVersion() {
+async function checkForNewVersion() {
   try {
-    const response = await fetch(`${versionUrl}?_=${Date.now()}`, { cache: 'no-store' });
+    const response = await fetch('/version.txt', { cache: 'no-store' });
+    if (!response.ok) throw new Error('No se pudo obtener version.txt');
 
-    if (!response.ok) {
-      console.warn('No se pudo obtener la versión actual');
-      return;
+    const latestVersion = await response.text();
+
+    if (currentVersion && latestVersion.trim() !== currentVersion.trim()) {
+      console.log('Nueva versión detectada. Recargando...');
+      location.reload(true);
     }
 
-    const newVersion = await response.text();
-
-    if (currentVersion === null) {
-      currentVersion = newVersion.trim();
-    } else if (newVersion.trim() !== currentVersion) {
-      console.log('Nueva versión detectada. Recargando sin caché...');
-      window.location.href = window.location.href.split('?')[0] + '?v=' + new Date().getTime();
-    }
+    currentVersion = latestVersion.trim();
   } catch (error) {
-    console.error('Error al comprobar versión:', error);
+    console.error('Error al comprobar la versión:', error);
   }
 }
 
-// Comprobar cada 10 segundos (ajustable)
-setInterval(checkVersion, 10000);
-checkVersion(); // Primera comprobación inmediata
+// Revisa la versión cada 10 segundos (puedes ajustarlo si lo deseas)
+setInterval(checkForNewVersion, 10000);
+
+// También revisa justo al cargar la página
+checkForNewVersion();
