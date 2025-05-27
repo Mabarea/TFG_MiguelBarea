@@ -19,7 +19,7 @@ a {
     color: inherit;
 }
 
-/* .back-video {
+.back-video {
     position: fixed;
     top: 0;
     left: 0;
@@ -27,16 +27,16 @@ a {
     height: 100vh;
     overflow: hidden;
     z-index: -3;
-} */
+}
 
-/* .back-video video {
+.back-video video {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 100vh;
     object-fit: cover;
-} */
+}
 
 .overlay { /* Capa rosa semitransparente */
     position: fixed;
