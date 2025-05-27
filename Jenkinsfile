@@ -23,6 +23,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'netlify-token', variable: 'NETLIFY_TOKEN')]) {
                     sh '''
+                        echo $GIT_COMMIT > version.txt
                         netlify deploy --dir=. --site=6091cb2b-154c-407b-bb86-2a32afaf9d2a --auth=$NETLIFY_TOKEN --prod
                     '''
                 }
