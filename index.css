@@ -281,6 +281,10 @@ footer .Logo {
         display: none;
     }
 
+    .mobile-Servicios {
+        display: none;
+    }
+
     .Servicios {
         display: none;
         position: absolute;
