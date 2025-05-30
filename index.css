@@ -274,6 +274,8 @@ li.menu-uñas {
 /*     animation: mostrarBorde 1s ease 3s forwards; */
     font-family: 'FuenteExtra', 'Lobster', sans-serif;
     background: linear-gradient(to left, #ecbecb 10%, transparent 40%);
+    color: #ecbecb;
+    text-shadow: 1px 2px 35px black;
 }
 
 /* @keyframes mostrarBorde {
