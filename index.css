@@ -4,6 +4,7 @@
     margin: 0;
     text-decoration: none;
     list-style-type: none;
+/*     outline: 1px solid rgb(251, 255, 0);  *//* contorno rojo semitransparente */
 }
 
 @font-face {
@@ -34,6 +35,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'FuenteBody', sans-serif;
+    overflow: hidden;
 }
 
 a {
@@ -129,7 +131,7 @@ li.menu-uñas {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1vw 1vw 1vw 1vw;
+    padding: 1vw 2vw 1vw 1vw;
     width: fit-content;
 }
 
@@ -193,38 +195,34 @@ li.menu-uñas {
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
+    width: 100%;
 }
 
 #Pros {
     position: relative;
     display: flex;
     overflow: visible;
+    white-space: nowrap;
     flex-grow: 1;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    align-self: flex-start;
-    margin-left: 10%;
-    width: 40%;
+    transform: translate(-50%, 0);
+    width: 200%;
     font-size: 6vh;
-    font-weight: lighter;
     border-left: 3px solid #ecbecb;
     border-bottom: 3px solid rgb(0, 0, 0);
     border-top-left-radius: 10vw;
     border-bottom-left-radius: 20vw;
     padding: 0 2vw 0 2vw;
-    animation: movePros 3s ease-in-out;
-    left: -500px;
+    animation: moverPros 5s ease-in-out forwards;
     animation-fill-mode: both;
 }
 
-@keyframes movePros {
-    from {
-        left: -500px;
+@keyframes moverPros{
+    0% {
     }
-
-    to {
-        left: 0;
+    100% {
+        width: 40%;
     }
 }
 
@@ -235,6 +233,7 @@ li.menu-uñas {
     justify-content: flex-start;
     gap: 5vw;
     padding-top: 100px;
+    padding-right: 10%;
 }
 
 #Pros h5 {
@@ -245,46 +244,52 @@ li.menu-uñas {
     top:-3px;
     position: relative;
     display: flex;
-    width: 85%;
-    align-items: center;
     justify-content: center;
-    animation: moveCita 3s ease-in-out;
-    right: +500px;
+    left: 0;
+    width: 300%;
     animation-fill-mode: both;
+/*     transform: translate(100%, 0); */
+    animation: moverCita 3s ease-in-out forwards;
 }
 
-@keyframes moveCita {
-    from {
-        left: +1000px;
+@keyframes moverCita {
+    0% {
     }
 
-    to {
-        left: 0%;
+    100% {
+        transform: translate(0, 0);
+        width: 50%;
     }
 }
 
 #solicita {
-    padding-right: 50px;
-    margin-left: 50px;
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-left: 15%;
+    padding-right: 15%;
     font-size: 3vh;
     border-bottom-right-radius: 60vw;
     border-top-right-radius: 60vw;
     border-top: 3px solid black;
     border-right: 3px solid black;
-/*     animation: mostrarBorde 1s ease 3s forwards; */
+    background: linear-gradient(to left, #ecbecb 5%, transparent 20%);
     font-family: 'FuenteExtra', 'Lobster', sans-serif;
-    background: linear-gradient(to left, #ecbecb 10%, transparent 40%);
     color: #ecbecb;
-    text-shadow: 1px 2px 35px black;
 }
 
-/* @keyframes mostrarBorde {
-  to {
-    border-top-color: black;
-    border-right-color: #ecbecb;
-    background: linear-gradient(to left, #fff0f3 10%, transparent 50%);
-  }
-} */
+@keyframes moverCita {
+    0% {
+    }
+
+    100% {
+        transform: translate(0, 0);
+        width: 50%;
+    }
+}
 
 footer {
     position: relative;
