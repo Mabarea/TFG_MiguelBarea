@@ -1,11 +1,25 @@
-
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     text-decoration: none;
     list-style-type: none;
-    font-family: 'Lobster', sans-serif;
+}
+
+@font-face {
+  font-family: 'FuenteBody';
+  src:
+    url('fuente/HenriDidot.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FuenteExtra';
+  src:
+    url('fuente/wind.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 html {
@@ -19,6 +33,7 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    font-family: 'FuenteBody', sans-serif;
 }
 
 a {
@@ -76,6 +91,7 @@ nav {
     justify-content: space-between;
     width: 100%;
     font-size: 3vw;
+    font-family: 'FuenteExtra', 'Lobster', sans-serif;
     background: linear-gradient(to left, #fff0f3 10%, transparent 80%);
 }
 
@@ -190,7 +206,7 @@ li.menu-uñas {
     align-self: flex-start;
     margin-left: 10%;
     width: 40%;
-    font-size: 5vh;
+    font-size: 6vh;
     font-weight: lighter;
     border-left: 3px solid #ecbecb;
     border-bottom: 3px solid rgb(0, 0, 0);
@@ -239,7 +255,7 @@ li.menu-uñas {
 
 @keyframes moveCita {
     from {
-        left: +500px;
+        left: +1000px;
     }
 
     to {
@@ -253,17 +269,20 @@ li.menu-uñas {
     font-size: 3vh;
     border-bottom-right-radius: 60vw;
     border-top-right-radius: 60vw;
-    border-top: 3px solid transparent;
-    border-right: 3px solid transparent;
-    animation: mostrarBorde 1s ease 3s forwards;
+    border-top: 3px solid black;
+    border-right: 3px solid black;
+/*     animation: mostrarBorde 1s ease 3s forwards; */
+    font-family: 'FuenteExtra', 'Lobster', sans-serif;
+    background: linear-gradient(to left, #ecbecb 10%, transparent 40%);
 }
 
-@keyframes mostrarBorde {
+/* @keyframes mostrarBorde {
   to {
     border-top-color: black;
-    border-right-color: black;
+    border-right-color: #ecbecb;
+    background: linear-gradient(to left, #fff0f3 10%, transparent 50%);
   }
-}
+} */
 
 footer {
     position: relative;
@@ -273,6 +292,7 @@ footer {
     bottom: 0px;
     box-sizing: content-box;
     border-top: 6px solid whitesmoke;
+    font-family: 'FuenteExtra', 'Lobster', sans-serif;
 }
 
 #Contacto {
@@ -387,7 +407,7 @@ footer .Logo {
         flex-grow: 1;
         max-width: 40%;
         margin-left: 10%;
-        font-size: 5vh;
+        font-size: 7vh;
         border-top-left-radius: 5vw;
         border-bottom-left-radius: 7vw;
         width: 50.6%;
