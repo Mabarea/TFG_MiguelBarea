@@ -257,7 +257,6 @@ li.menu-uñas {
     }
 
     100% {
-        transform: translate(0, 0);
         width: 50%;
     }
 }
@@ -409,15 +408,8 @@ footer .Logo {
     }
 
     #Pros {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        max-width: 40%;
-        margin-left: 10%;
-        font-size: 7vh;
-        border-top-left-radius: 5vw;
-        border-bottom-left-radius: 7vw;
-        width: 50.6%;
+        border-top-left-radius: 8vh;
+        border-bottom-left-radius: 15vh;
     }
 
     #Pros a {
@@ -428,10 +420,44 @@ footer .Logo {
     .Cita {
         align-items: center;
     }
-    
+
     #solicita {
-        padding: 1vw 6vw;
-        font-size: 2vw;
+        position: relative;
+        display: flex;
+        white-space: nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        margin-left: 10%;
+        padding-right: 15%;
+        font-size: 3vh;
+        border-bottom-right-radius: 60vw;
+        border-top-right-radius: 60vw;
+        border-top: 3px solid black;
+        border-right: 3px solid black;
+        background: linear-gradient(to left, #ecbecb 5%, transparent 20%);
+        font-family: 'FuenteExtra', 'Lobster', sans-serif;
+        color: #ecbecb;
+        animation: widthSolicita 3s ease-in-out forwards;
+    }
+
+    @keyframes widthSolicita {
+        0% {
+        }
+
+        100% {
+            width: 50%;
+        }
+    }
+
+    @keyframes moverCita {
+        0% {
+        }
+
+        100% {
+            transform: translate(0, 0);
+            width: 50%;
+        }
     }
 
     #Contacto {
