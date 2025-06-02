@@ -410,6 +410,7 @@ footer .Logo {
     #Pros {
         border-top-left-radius: 8vh;
         border-bottom-left-radius: 15vh;
+        font-size: 8vh;
     }
 
     #Pros a {
@@ -430,6 +431,8 @@ footer .Logo {
         width: 100%;
         margin-left: 10%;
         padding-right: 15%;
+        padding-top: 10px;
+        padding-bottom: 10px;
         font-size: 3vh;
         border-bottom-right-radius: 60vw;
         border-top-right-radius: 60vw;
